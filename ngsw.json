@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1768543798296,
+  "timestamp": 1768544742453,
   "index": "https://Esrouge98.github.io/basket-score/index.html",
   "assetGroups": [
     {
@@ -42,15 +42,15 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://Esrouge98.github.io/basket-score/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
-    "https://Esrouge98.github.io/basket-score/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
-    "https://Esrouge98.github.io/basket-score/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
-    "https://Esrouge98.github.io/basket-score/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
-    "https://Esrouge98.github.io/basket-score/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
-    "https://Esrouge98.github.io/basket-score/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
-    "https://Esrouge98.github.io/basket-score/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
-    "https://Esrouge98.github.io/basket-score/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
-    "https://Esrouge98.github.io/basket-score/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "https://Esrouge98.github.io/basket-score/favicon.ico": "445a6e3e6cb2a2034b9fa075265ec5606b26865e",
+    "https://Esrouge98.github.io/basket-score/icons/icon-128x128.png": "baad3c5a46d91e9a0d8caf6f5c3523f223dcb633",
+    "https://Esrouge98.github.io/basket-score/icons/icon-144x144.png": "008e7a1d2272fc041d3302aa6a9d2a6b0a2a6ef5",
+    "https://Esrouge98.github.io/basket-score/icons/icon-152x152.png": "432fb10d0af57e833c7b8bc9ca516e9ceb767c06",
+    "https://Esrouge98.github.io/basket-score/icons/icon-192x192.png": "bc29e06be4c4599ff6b2da7404a6c918893935dd",
+    "https://Esrouge98.github.io/basket-score/icons/icon-384x384.png": "35d61d817f1853985ce771a24db509bd5c96c25f",
+    "https://Esrouge98.github.io/basket-score/icons/icon-512x512.png": "797a7a606a0dce314a4887cc69036cc0fff91834",
+    "https://Esrouge98.github.io/basket-score/icons/icon-72x72.png": "cbf0349ebd1402aaed7784246b0299de68960d7c",
+    "https://Esrouge98.github.io/basket-score/icons/icon-96x96.png": "7296c53d720c62cceaa6c5e3f5b22f8c272587db",
     "https://Esrouge98.github.io/basket-score/index.html": "dcf30123b78e1b945f637e92094ce4fae2da18c4",
     "https://Esrouge98.github.io/basket-score/main-VPPZCVMV.js": "7375aeb9f05a61553597a42f5788cf120cae405a",
     "https://Esrouge98.github.io/basket-score/manifest.webmanifest": "0e36f9af37dc787dbc09afd4c8d94389a4a0dcc4",
