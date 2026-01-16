@@ -1,0 +1,114 @@
+// Variables
+$bg-color: #1a1a2e;
+$primary: #e94560; // Color Neon Rojo/Rosa
+$secondary: #0f3460;
+$text: #fff;
+$accent: #16213e;
+
+:host {
+  font-family: 'Segoe UI', sans-serif;
+  display: block;
+  min-height: 100vh;
+  background-color: $bg-color;
+  color: $text;
+  text-align: center;
+}
+
+.container {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+// Timer Styles
+.scoreboard-header {
+  margin-bottom: 2rem;
+
+  h1 { font-size: 1.5rem; margin-bottom: 1rem; letter-spacing: 2px; }
+
+  .timer-box {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    background: #000;
+    color: red;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    &.active { color: #0f0; } // Verde cuando corre
+  }
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+
+  .btn-control {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    background: $primary;
+    color: white;
+    font-size: 1rem;
+
+    &.reset { background: #555; }
+  }
+}
+
+// Teams Layout (Mobile First: Columnas)
+.teams-container {
+  display: flex;
+  flex-direction: column; // Uno debajo del otro en celular
+  gap: 2rem;
+
+  // Media Query para Tablet/PC: Lado a lado
+  @media (min-width: 600px) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    .team { width: 45%; }
+  }
+}
+
+.team {
+  background: $accent;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+
+  h2 { margin: 0; color: #aaa; font-size: 1.2rem; }
+
+  .score {
+    font-size: 5rem;
+    font-weight: 800;
+    margin: 10px 0;
+    line-height: 1;
+  }
+
+  .buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    button {
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      background: $secondary;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.1s;
+
+      &:active { transform: scale(0.95); }
+      &.undo { background: #333; font-size: 0.9rem; }
+    }
+  }
+}
