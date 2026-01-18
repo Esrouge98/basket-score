@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1768740139355,
+  "timestamp": 1768740983124,
   "index": "https://Esrouge98.github.io/basket-score/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://Esrouge98.github.io/basket-score/favicon.ico",
         "https://Esrouge98.github.io/basket-score/index.html",
-        "https://Esrouge98.github.io/basket-score/main-Z6I7VY4K.js",
+        "https://Esrouge98.github.io/basket-score/main-LNSIC6NT.js",
         "https://Esrouge98.github.io/basket-score/manifest.webmanifest",
         "https://Esrouge98.github.io/basket-score/polyfills-B6TNHZQ6.js",
         "https://Esrouge98.github.io/basket-score/styles-HOZ7PSOD.css"
@@ -51,8 +51,8 @@
     "https://Esrouge98.github.io/basket-score/icons/icon-512x512.png": "797a7a606a0dce314a4887cc69036cc0fff91834",
     "https://Esrouge98.github.io/basket-score/icons/icon-72x72.png": "cbf0349ebd1402aaed7784246b0299de68960d7c",
     "https://Esrouge98.github.io/basket-score/icons/icon-96x96.png": "7296c53d720c62cceaa6c5e3f5b22f8c272587db",
-    "https://Esrouge98.github.io/basket-score/index.html": "42054650f9f59b0124517155da21110760251259",
-    "https://Esrouge98.github.io/basket-score/main-Z6I7VY4K.js": "aa86ab9c6212f6aa2e1a558be6d98335559db6f9",
+    "https://Esrouge98.github.io/basket-score/index.html": "546479d91317496df8dfef831f21a2d91b2ea7df",
+    "https://Esrouge98.github.io/basket-score/main-LNSIC6NT.js": "3b3559d0f3fa4aa795e0e148f0a873a75092e9c8",
     "https://Esrouge98.github.io/basket-score/manifest.webmanifest": "0e36f9af37dc787dbc09afd4c8d94389a4a0dcc4",
     "https://Esrouge98.github.io/basket-score/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
     "https://Esrouge98.github.io/basket-score/styles-HOZ7PSOD.css": "947385a1bf736ed13e0610993542b25e6dff9c3f"
