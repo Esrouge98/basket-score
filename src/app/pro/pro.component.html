@@ -1,0 +1,158 @@
+<div class="pro-container">
+
+  <header class="top-bar">
+
+   <div class="header-left">
+
+      <div class="period-display" (click)="nextPeriod()">
+        <span class="label">Q</span>
+        <span class="number">{{ period() }}</span>
+      </div>
+
+      <button class="btn-icon play-btn" (click)="toggleTimer()">
+        {{ isRunning() ? '⏸' : '▶' }}
+      </button>
+
+    </div>
+  <div class="header-center">
+      <div class="timer-display" [class.active]="isRunning()" (click)="handleClockClick()">
+        {{ displayTime }}
+      </div>
+    </div>
+
+    <div class="header-right">
+
+
+      <button class="btn-icon reset" (click)="resetTimer()">⏱️</button>
+
+      <button class="btn-icon clean" (click)="resetOnlyScores()" title="Poner en Cero">
+        🧹
+      </button>
+
+      <button class="btn-icon delete" (click)="resetEverything()" title="Borrar Todo">
+        🗑️
+      </button>
+    </div>
+  </header>
+
+  <div class="score-board-banner">
+    <div class="team-banner home">
+      <input type="text" [(ngModel)]="homeName" class="t-name-input">
+      <span class="t-score">{{ homeScore() }}</span>
+    </div>
+    <div class="vs">VS</div>
+    <div class="team-banner guest">
+      <span class="t-score">{{ guestScore() }}</span>
+      <input type="text" [(ngModel)]="guestName" class="t-name-input">
+    </div>
+  </div>
+
+  <main class="players-area">
+    <section class="team-list home-list">
+      <button class="add-btn home" (click)="openAddModal('home')">+ JUGADORES</button>
+      <div class="players-scroll">
+        @for (player of homePlayers(); track player.id; let i = $index) {
+          <div class="player-card home-card">
+            <div class="card-left">
+              <div class="p-jersey" (click)="openEditModal('home', i, player.number)">{{ player.number }}</div>
+            </div>
+            <div class="card-center">
+              <div class="btn-group">
+                <button class="btn-act undo" (click)="updatePlayerScore('home', i, -1)">-1</button>
+                <button class="btn-act" (click)="updatePlayerScore('home', i, 1)">+1</button>
+                <button class="btn-act" (click)="updatePlayerScore('home', i, 2)">+2</button>
+                <button class="btn-act" (click)="updatePlayerScore('home', i, 3)">+3</button>
+              </div>
+            </div>
+            <div class="card-right"><div class="p-total">{{ player.score }}</div><span class="pts-label">PTS</span></div>
+          </div>
+        }
+      </div>
+    </section>
+
+    <section class="team-list guest-list">
+      <button class="add-btn guest" (click)="openAddModal('guest')">+ JUGADORES</button>
+      <div class="players-scroll">
+        @for (player of guestPlayers(); track player.id; let i = $index) {
+          <div class="player-card guest-card">
+            <div class="card-left"><div class="p-total">{{ player.score }}</div><span class="pts-label">PTS</span></div>
+            <div class="card-center">
+              <div class="btn-group">
+                <button class="btn-act" (click)="updatePlayerScore('guest', i, 3)">+3</button>
+                <button class="btn-act" (click)="updatePlayerScore('guest', i, 2)">+2</button>
+                <button class="btn-act" (click)="updatePlayerScore('guest', i, 1)">+1</button>
+                <button class="btn-act undo" (click)="updatePlayerScore('guest', i, -1)">-1</button>
+              </div>
+            </div>
+            <div class="card-right">
+              <div class="p-jersey" (click)="openEditModal('guest', i, player.number)">{{ player.number }}</div>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+  </main>
+</div>
+
+@if (isModalOpen()) {
+  <div class="modal-overlay">
+    <div class="keypad-container" [class.home-theme]="activeModalTeam() === 'home'" [class.guest-theme]="activeModalTeam() === 'guest'">
+      <div class="keypad-header">
+        <h3>{{ editingPlayerIndex() !== null ? 'EDITAR JUGADOR' : 'AGREGAR JUGADOR' }}</h3>
+        <button class="close-btn" (click)="closeModal()">✖</button>
+      </div>
+      <div class="keypad-display">{{ modalInput() || '_' }}</div>
+      <div class="keypad-grid">
+        <button (click)="pressKey(1)">1</button>
+        <button (click)="pressKey(2)">2</button>
+        <button (click)="pressKey(3)">3</button>
+        <button (click)="pressKey(4)">4</button>
+        <button (click)="pressKey(5)">5</button>
+        <button (click)="pressKey(6)">6</button>
+        <button (click)="pressKey(7)">7</button>
+        <button (click)="pressKey(8)">8</button>
+        <button (click)="pressKey(9)">9</button>
+        <button class="action-btn back" (click)="backspace()">⌫</button>
+        <button (click)="pressKey(0)">0</button>
+        <button class="action-btn enter" (click)="confirmPlayer()">✔</button>
+      </div>
+      @if (editingPlayerIndex() !== null) {
+        <div class="delete-section">
+          <button class="btn-delete-player" (click)="deleteCurrentPlayer()">🗑️ ELIMINAR JUGADOR</button>
+        </div>
+      }
+    </div>
+  </div>
+}
+@if (isTimeModalOpen()) {
+  <div class="modal-overlay">
+    <div class="keypad-container">
+
+      <div class="keypad-header">
+        <h3>AJUSTAR MINUTOS</h3>
+        <button class="close-btn" (click)="isTimeModalOpen.set(false)">✖</button>
+      </div>
+
+      <div class="keypad-display">
+        {{ modalInput() ? modalInput() + ':00' : '00:00' }}
+      </div>
+
+      <div class="keypad-grid">
+        <button (click)="pressKey(1)">1</button>
+        <button (click)="pressKey(2)">2</button>
+        <button (click)="pressKey(3)">3</button>
+        <button (click)="pressKey(4)">4</button>
+        <button (click)="pressKey(5)">5</button>
+        <button (click)="pressKey(6)">6</button>
+        <button (click)="pressKey(7)">7</button>
+        <button (click)="pressKey(8)">8</button>
+        <button (click)="pressKey(9)">9</button>
+
+        <button class="action-btn back" (click)="backspace()">⌫</button>
+        <button (click)="pressKey(0)">0</button>
+
+        <button class="action-btn enter" (click)="confirmTime()">✔</button>
+      </div>
+    </div>
+  </div>
+}

@@ -1,40 +1,27 @@
-<div class="container">
-  <header class="scoreboard-header">
-    <h1>BASKET SCORE</h1>
-    <div class="timer-box" [class.active]="isRunning()">
-      {{ displayTime }}
-    </div>
-    <div class="controls">
-      <button (click)="toggleTimer()" class="btn-control">
-        {{ isRunning() ? 'PAUSA ⏸' : 'INICIAR ▶' }}
-      </button>
-      <button (click)="resetScores()" class="btn-control reset">
-        REINICIAR ↺
-      </button>
-    </div>
-  </header>
+<div class="main-layout">
 
-  <main class="teams-container">
-    <section class="team home">
-      <h2>LOCAL</h2>
-      <div class="score">{{ homeScore() }}</div>
-      <div class="buttons-grid">
-        <button (click)="updateScore('home', 1)">+1 TL</button>
-        <button (click)="updateScore('home', 2)">+2 PT</button>
-        <button (click)="updateScore('home', 3)">+3 PT</button>
-        <button (click)="updateScore('home', -1)" class="undo">-1</button>
-      </div>
-    </section>
+  <nav class="tab-bar">
+    <button
+      [class.active]="currentTab === 'simple'"
+      (click)="currentTab = 'simple'">
+      SIMPLE 🏀
+    </button>
+    <button
+      [class.active]="currentTab === 'pro'"
+      (click)="currentTab = 'pro'">
+      PRO 👑
+    </button>
+  </nav>
 
-    <section class="team guest">
-      <h2>VISITANTE</h2>
-      <div class="score">{{ guestScore() }}</div>
-      <div class="buttons-grid">
-        <button (click)="updateScore('guest', 1)">+1 TL</button>
-        <button (click)="updateScore('guest', 2)">+2 PT</button>
-        <button (click)="updateScore('guest', 3)">+3 PT</button>
-        <button (click)="updateScore('guest', -1)" class="undo">-1</button>
-      </div>
-    </section>
-  </main>
+  <div class="content-area">
+
+    @if (currentTab === 'simple') {
+      <app-simple></app-simple>
+    }
+
+    @if (currentTab === 'pro') {
+      <app-pro></app-pro>
+    }
+
+  </div>
 </div>

@@ -1,114 +1,50 @@
-// Variables
-$bg-color: #1a1a2e;
-$primary: #e94560; // Color Neon Rojo/Rosa
-$secondary: #0f3460;
-$text: #fff;
-$accent: #16213e;
-
-:host {
-  font-family: 'Segoe UI', sans-serif;
-  display: block;
-  min-height: 100vh;
-  background-color: $bg-color;
-  color: $text;
-  text-align: center;
-}
-
-.container {
-  padding: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-// Timer Styles
-.scoreboard-header {
-  margin-bottom: 2rem;
-
-  h1 { font-size: 1.5rem; margin-bottom: 1rem; letter-spacing: 2px; }
-
-  .timer-box {
-    font-size: 4rem;
-    font-weight: bold;
-    font-family: 'Courier New', monospace;
-    background: #000;
-    color: red;
-    padding: 10px;
-    border: 2px solid #333;
-    border-radius: 10px;
-    width: 100%;
-    margin-bottom: 1rem;
-
-    &.active { color: #0f0; } // Verde cuando corre
-  }
-}
-
-.controls {
+// Layout principal que ocupa toda la pantalla
+.main-layout {
   display: flex;
-  gap: 10px;
-  justify-content: center;
+  flex-direction: column;
+  height: 100dvh; // Altura exacta del celular
+  background-color: #0b0c15; // Fondo base
+  overflow: hidden;
+}
 
-  .btn-control {
-    padding: 10px 20px;
+// Barra de navegación superior
+.tab-bar {
+  display: flex;
+  background: #000;
+  border-bottom: 2px solid #333;
+  height: 60px; // Altura cómoda para el dedo
+  flex-shrink: 0; // Evita que se aplaste
+
+  button {
+    flex: 1; // 50% de ancho cada uno
+    background: transparent;
     border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    background: $primary;
-    color: white;
-    font-size: 1rem;
-
-    &.reset { background: #555; }
-  }
-}
-
-// Teams Layout (Mobile First: Columnas)
-.teams-container {
-  display: flex;
-  flex-direction: column; // Uno debajo del otro en celular
-  gap: 2rem;
-
-  // Media Query para Tablet/PC: Lado a lado
-  @media (min-width: 600px) {
-    flex-direction: row;
-    justify-content: space-between;
-
-    .team { width: 45%; }
-  }
-}
-
-.team {
-  background: $accent;
-  padding: 1.5rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-
-  h2 { margin: 0; color: #aaa; font-size: 1.2rem; }
-
-  .score {
-    font-size: 5rem;
+    color: #666;
     font-weight: 800;
-    margin: 10px 0;
-    line-height: 1;
-  }
+    font-size: 1rem;
+    cursor: pointer;
+    border-bottom: 4px solid transparent;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 
-  .buttons-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-
-    button {
-      padding: 15px;
-      border: none;
-      border-radius: 8px;
-      background: $secondary;
+    // Estilo cuando está activo
+    &.active {
       color: white;
-      font-size: 1.1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: transform 0.1s;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(233, 69, 96, 0.1) 100%);
+      border-bottom-color: #e94560; // Rojo neón
+      text-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+    }
 
-      &:active { transform: scale(0.95); }
-      &.undo { background: #333; font-size: 0.9rem; }
+    &:active {
+      background: #222;
     }
   }
+}
+
+// El contenedor donde se pintan los componentes hijos
+.content-area {
+  flex: 1; // Ocupa todo el espacio restante
+  overflow: hidden; // El scroll lo maneja cada hijo internamente
+  position: relative;
 }

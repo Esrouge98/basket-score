@@ -1,0 +1,52 @@
+<div class="scoreboard-container">
+
+  <header class="top-bar">
+    <div class="timer-group">
+      <div class="timer-display" [class.active]="isRunning()" (click)="toggleTimer()">
+        {{ displayTime }}
+      </div>
+      <div class="period-display" (click)="nextPeriod()">
+        <span class="label">PERIODO</span>
+        <span class="number">{{ period() }}</span>
+      </div>
+    </div>
+
+    <div class="global-controls">
+      <button class="btn-icon" (click)="toggleTimer()">
+        {{ isRunning() ? '⏸' : '▶' }}
+      </button>
+      <button class="btn-icon reset" (click)="resetTimer()" title="Reiniciar Tiempo">
+        ⏱️
+      </button>
+      <button class="btn-icon delete" (click)="resetScores()" title="Borrar Marcador">
+        🗑️
+      </button>
+    </div>
+  </header>
+
+  <main class="game-area">
+    <section class="team-column home">
+      <input type="text" [(ngModel)]="homeName" class="team-name-input">
+      <div class="big-score">{{ homeScore() }}</div>
+      <div class="controls-grid">
+        <button (click)="updateScore('home', 1)">+1</button>
+        <button (click)="updateScore('home', 2)">+2</button>
+        <button (click)="updateScore('home', 3)">+3</button>
+        <button (click)="updateScore('home', -1)" class="undo">-1</button>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="team-column guest">
+      <input type="text" [(ngModel)]="guestName" class="team-name-input">
+      <div class="big-score">{{ guestScore() }}</div>
+      <div class="controls-grid">
+        <button (click)="updateScore('guest', 1)">+1</button>
+        <button (click)="updateScore('guest', 2)">+2</button>
+        <button (click)="updateScore('guest', 3)">+3</button>
+        <button (click)="updateScore('guest', -1)" class="undo">-1</button>
+      </div>
+    </section>
+  </main>
+</div>

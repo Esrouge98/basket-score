@@ -1,0 +1,180 @@
+@use "sass:color";
+
+:host {
+  display: block;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background-color: #0b0c15;
+  color: white;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+// Variables
+$color-home: #e94560;
+$color-guest: #4ecca3;
+
+.scoreboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.top-bar {
+  background: #000;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 14vh; // Un poquito más alto para que quepa todo cómodo
+  border-bottom: 2px solid #333;
+
+  // NUEVO: Grupo del Timer y el Periodo
+  .timer-group {
+    display: flex;
+    flex-direction: column; // Uno arriba del otro
+    align-items: flex-start;
+  }
+
+  .timer-display {
+    font-family: 'Courier New', monospace;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: red;
+    line-height: 1;
+    cursor: pointer;
+    &.active { color: #0f0; }
+  }
+
+  // Estilo del Periodo
+  .period-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+    cursor: pointer;
+    background: #222;
+    padding: 2px 8px;
+    border-radius: 4px;
+
+    .label { font-size: 0.8rem; color: #888; font-weight: bold; letter-spacing: 1px; }
+    .number { font-size: 1.2rem; color: yellow; font-weight: bold; }
+  }
+
+  .global-controls {
+    display: flex;
+    gap: 10px;
+
+    .btn-icon {
+      background: #333;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+
+      &:active { transform: scale(0.9); }
+      &.reset { background: #444; color: #aaa; }
+      &.delete { background: #4e1a1a; color: #ff6b6b; }
+    }
+  }
+}
+
+// --- 2. ÁREA DE JUEGO (Split Screen) ---
+.game-area {
+  flex-grow: 1; // Ocupa todo el espacio restante
+  display: flex; // Pone a los equipos lado a lado
+  position: relative;
+}
+
+.team-column {
+  flex: 1; // 50% de ancho cada uno
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly; // Distribuye espacio verticalmente
+  padding: 0.5rem;
+
+  &.home { background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%); }
+  &.guest { background: linear-gradient(180deg, #1a1a2e 0%, #0f3460 100%); }
+
+  // Input transparente que parece texto
+  .team-name-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    color: #aaa;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 80%;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px;
+    outline: none;
+
+    &:focus { border-color: white; color: white; }
+  }
+
+  .big-score {
+    font-size: 6rem; // GIGANTE
+    font-weight: 800;
+    line-height: 1;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  }
+}
+
+// Botones en rejilla 2x2 para cada equipo
+.controls-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+  max-width: 200px;
+
+  button {
+    padding: 15px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
+    &:active { transform: scale(0.95); background: rgba(255, 255, 255, 0.2); }
+
+    // --- AQUÍ ESTÁ LA CORRECCIÓN DE LOS WARNINGS ---
+    .home & {
+      border: 1px solid color.change($color-home, $alpha: 0.3);
+      color: color.adjust($color-home, $lightness: 10%);
+    }
+
+    .guest & {
+      border: 1px solid color.change($color-guest, $alpha: 0.3);
+      color: color.adjust($color-guest, $lightness: 10%);
+    }
+
+    &.undo {
+      grid-column: span 2; // El botón -1 ocupa todo el ancho
+      font-size: 1rem;
+      opacity: 0.7;
+      background: transparent;
+      border: 1px dashed #555;
+      color: #ccc; // Color neutral para el deshacer
+    }
+  }
+}
+
+// Línea divisora
+.divider {
+  width: 2px;
+  background: rgba(255,255,255,0.1);
+  height: 80%;
+  align-self: center;
+}
