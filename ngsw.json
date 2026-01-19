@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1768865348976,
+  "timestamp": 1768866007205,
   "index": "/basket-score/index.html",
   "assetGroups": [
     {
@@ -11,10 +11,7 @@
         "ignoreVary": true
       },
       "urls": [
-        "/basket-score/favicon.ico",
-        "/basket-score/index.html",
         "/basket-score/main-3R4A3J7C.js",
-        "/basket-score/manifest.webmanifest",
         "/basket-score/polyfills-B6TNHZQ6.js",
         "/basket-score/styles-HOZ7PSOD.css"
       ],
@@ -42,7 +39,6 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/basket-score/favicon.ico": "445a6e3e6cb2a2034b9fa075265ec5606b26865e",
     "/basket-score/icons/icon-128x128.png": "baad3c5a46d91e9a0d8caf6f5c3523f223dcb633",
     "/basket-score/icons/icon-144x144.png": "008e7a1d2272fc041d3302aa6a9d2a6b0a2a6ef5",
     "/basket-score/icons/icon-152x152.png": "432fb10d0af57e833c7b8bc9ca516e9ceb767c06",
@@ -51,9 +47,7 @@
     "/basket-score/icons/icon-512x512.png": "797a7a606a0dce314a4887cc69036cc0fff91834",
     "/basket-score/icons/icon-72x72.png": "cbf0349ebd1402aaed7784246b0299de68960d7c",
     "/basket-score/icons/icon-96x96.png": "7296c53d720c62cceaa6c5e3f5b22f8c272587db",
-    "/basket-score/index.html": "fc2723f5ce413af3ceeaac6b4ad6d5e53c5cdf54",
     "/basket-score/main-3R4A3J7C.js": "3d8d60cb4862650fb22aaae4ea6446ff33b8ae76",
-    "/basket-score/manifest.webmanifest": "843b892e3558337c15251eaa732aeb6aacf8de6c",
     "/basket-score/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
     "/basket-score/styles-HOZ7PSOD.css": "947385a1bf736ed13e0610993542b25e6dff9c3f"
   },
