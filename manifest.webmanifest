@@ -2,8 +2,8 @@
   "name": "basket-score",
   "short_name": "basket-score",
   "display": "standalone",
-  "scope": "./",
-  "start_url": "./",
+  "scope": "/basket-score/",
+  "start_url": "/basket-score/",
   "icons": [
     {
       "src": "icons/icon-72x72.png",
