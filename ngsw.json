@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1768861602539,
-  "index": "https://Esrouge98.github.io/basket-score/index.html",
+  "timestamp": 1768862164536,
+  "index": "/basket-score/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,12 +11,12 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://Esrouge98.github.io/basket-score/favicon.ico",
-        "https://Esrouge98.github.io/basket-score/index.html",
-        "https://Esrouge98.github.io/basket-score/main-IXQNIU3J.js",
-        "https://Esrouge98.github.io/basket-score/manifest.webmanifest",
-        "https://Esrouge98.github.io/basket-score/polyfills-B6TNHZQ6.js",
-        "https://Esrouge98.github.io/basket-score/styles-HOZ7PSOD.css"
+        "/basket-score/favicon.ico",
+        "/basket-score/index.html",
+        "/basket-score/main-IXQNIU3J.js",
+        "/basket-score/manifest.webmanifest",
+        "/basket-score/polyfills-B6TNHZQ6.js",
+        "/basket-score/styles-HOZ7PSOD.css"
       ],
       "patterns": []
     },
@@ -28,34 +28,34 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://Esrouge98.github.io/basket-score/icons/icon-128x128.png",
-        "https://Esrouge98.github.io/basket-score/icons/icon-144x144.png",
-        "https://Esrouge98.github.io/basket-score/icons/icon-152x152.png",
-        "https://Esrouge98.github.io/basket-score/icons/icon-192x192.png",
-        "https://Esrouge98.github.io/basket-score/icons/icon-384x384.png",
-        "https://Esrouge98.github.io/basket-score/icons/icon-512x512.png",
-        "https://Esrouge98.github.io/basket-score/icons/icon-72x72.png",
-        "https://Esrouge98.github.io/basket-score/icons/icon-96x96.png"
+        "/basket-score/icons/icon-128x128.png",
+        "/basket-score/icons/icon-144x144.png",
+        "/basket-score/icons/icon-152x152.png",
+        "/basket-score/icons/icon-192x192.png",
+        "/basket-score/icons/icon-384x384.png",
+        "/basket-score/icons/icon-512x512.png",
+        "/basket-score/icons/icon-72x72.png",
+        "/basket-score/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://Esrouge98.github.io/basket-score/favicon.ico": "445a6e3e6cb2a2034b9fa075265ec5606b26865e",
-    "https://Esrouge98.github.io/basket-score/icons/icon-128x128.png": "baad3c5a46d91e9a0d8caf6f5c3523f223dcb633",
-    "https://Esrouge98.github.io/basket-score/icons/icon-144x144.png": "008e7a1d2272fc041d3302aa6a9d2a6b0a2a6ef5",
-    "https://Esrouge98.github.io/basket-score/icons/icon-152x152.png": "432fb10d0af57e833c7b8bc9ca516e9ceb767c06",
-    "https://Esrouge98.github.io/basket-score/icons/icon-192x192.png": "bc29e06be4c4599ff6b2da7404a6c918893935dd",
-    "https://Esrouge98.github.io/basket-score/icons/icon-384x384.png": "35d61d817f1853985ce771a24db509bd5c96c25f",
-    "https://Esrouge98.github.io/basket-score/icons/icon-512x512.png": "797a7a606a0dce314a4887cc69036cc0fff91834",
-    "https://Esrouge98.github.io/basket-score/icons/icon-72x72.png": "cbf0349ebd1402aaed7784246b0299de68960d7c",
-    "https://Esrouge98.github.io/basket-score/icons/icon-96x96.png": "7296c53d720c62cceaa6c5e3f5b22f8c272587db",
-    "https://Esrouge98.github.io/basket-score/index.html": "4f4136bdb36afc6ef85146caf77fdcf91c19b1d8",
-    "https://Esrouge98.github.io/basket-score/main-IXQNIU3J.js": "1ad1642c3e86efa76a05deaba2a865e057060a3e",
-    "https://Esrouge98.github.io/basket-score/manifest.webmanifest": "0e36f9af37dc787dbc09afd4c8d94389a4a0dcc4",
-    "https://Esrouge98.github.io/basket-score/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
-    "https://Esrouge98.github.io/basket-score/styles-HOZ7PSOD.css": "947385a1bf736ed13e0610993542b25e6dff9c3f"
+    "/basket-score/favicon.ico": "445a6e3e6cb2a2034b9fa075265ec5606b26865e",
+    "/basket-score/icons/icon-128x128.png": "baad3c5a46d91e9a0d8caf6f5c3523f223dcb633",
+    "/basket-score/icons/icon-144x144.png": "008e7a1d2272fc041d3302aa6a9d2a6b0a2a6ef5",
+    "/basket-score/icons/icon-152x152.png": "432fb10d0af57e833c7b8bc9ca516e9ceb767c06",
+    "/basket-score/icons/icon-192x192.png": "bc29e06be4c4599ff6b2da7404a6c918893935dd",
+    "/basket-score/icons/icon-384x384.png": "35d61d817f1853985ce771a24db509bd5c96c25f",
+    "/basket-score/icons/icon-512x512.png": "797a7a606a0dce314a4887cc69036cc0fff91834",
+    "/basket-score/icons/icon-72x72.png": "cbf0349ebd1402aaed7784246b0299de68960d7c",
+    "/basket-score/icons/icon-96x96.png": "7296c53d720c62cceaa6c5e3f5b22f8c272587db",
+    "/basket-score/index.html": "cf21b97dd6da9d2f3538ac5c097e4f7e636ce783",
+    "/basket-score/main-IXQNIU3J.js": "1ad1642c3e86efa76a05deaba2a865e057060a3e",
+    "/basket-score/manifest.webmanifest": "0e36f9af37dc787dbc09afd4c8d94389a4a0dcc4",
+    "/basket-score/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
+    "/basket-score/styles-HOZ7PSOD.css": "947385a1bf736ed13e0610993542b25e6dff9c3f"
   },
   "navigationUrls": [
     {
